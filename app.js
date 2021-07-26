@@ -106,12 +106,14 @@ function lookimg(event) {
     
     }
     else {
-        leftImageElement.removeEventListener('click',lookimg);
-      rightImageElement.removeEventListener('click',lookimg);
-      midlleImageElemant.removeEventListener('click',lookimg);
-       
+    //     leftImageElement.removeEventListener('click',lookimg);
+    //   rightImageElement.removeEventListener('click',lookimg);
+    //   midlleImageElemant.removeEventListener('click',lookimg);
+      imageSctuoin.removeEventListener('click', lookimg);
+
      let button=   document.getElementById('myBtn')
-        button.addEventListener('click',fghj);
+     button.hidden=false;   
+     button.addEventListener('click',fghj);
         
     }
       }
