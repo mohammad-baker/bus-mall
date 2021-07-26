@@ -20,6 +20,7 @@ function Bus(name,src) {
     Bus.all.push(this);
 }
 
+let button=   document.getElementById('myBtn')
 
 Bus.all = [];
 new Bus('bag', 'img/bag.jpg');
@@ -111,13 +112,13 @@ function lookimg(event) {
     //   midlleImageElemant.removeEventListener('click',lookimg);
       imageSctuoin.removeEventListener('click', lookimg);
 
-     let button=   document.getElementById('myBtn')
      button.hidden=false;   
      button.addEventListener('click',fghj);
         
     }
       }
-      
+      button.addEventListener('click',fghj);
+
 
     
 function fghj(){
@@ -129,6 +130,7 @@ for (let i = 0; i < Bus.all.length; i++) {
 
     list.appendChild(listItem);
     
-    listItem.textContent=`${Bus.all[i].name} has ${Bus.all[i].vots} votes ,and was seen ${Bus.all[i].shown} times.  `}
+    listItem.textContent=`${Bus.all[i].name} has ${Bus.all[i].vots} votes ,and was seen ${Bus.all[i].shown} times.  `
+}
     button.removeEventListener('click',fghj);
 }
