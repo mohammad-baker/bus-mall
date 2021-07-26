@@ -83,7 +83,7 @@ imageSctuoin.addEventListener('click', lookimg);
 function lookimg(event) {
 
     startVot++;
-    if (startVot < maximumVot) {
+    if (startVot <= maximumVot) {
         if (event.target.id === 'left-image') {
             Bus.all[leftImageIndex].vots++;
         }
