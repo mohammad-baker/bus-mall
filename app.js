@@ -74,10 +74,11 @@ function threeImage() {
 }
 
 threeImage()
-leftImageElement.addEventListener('click', lookimg);
-rightImageElement.addEventListener('click', lookimg);
-midlleImageElemant.addEventListener('click', lookimg);
-
+// leftImageElement.addEventListener('click', lookimg);
+// rightImageElement.addEventListener('click', lookimg);
+// midlleImageElemant.addEventListener('click', lookimg);
+let imageSctuoin = document.getElementById('ocation');
+imageSctuoin.addEventListener('click', lookimg);
 function lookimg(event) {
 
     startVot++;
@@ -95,6 +96,10 @@ function lookimg(event) {
             Bus.all[rightImageIndex].vots++;
 
 
+        }
+        else{
+            alert('you should vote in image');
+            startVot--;
         }
         threeImage()
    
