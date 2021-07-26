@@ -82,8 +82,7 @@ let imageSctuoin = document.getElementById('ocation');
 imageSctuoin.addEventListener('click', lookimg);
 function lookimg(event) {
 
-    startVot++;
-    if (startVot <= maximumVot) {
+    if (startVot < maximumVot) {
         if (event.target.id === 'left-image') {
             Bus.all[leftImageIndex].vots++;
         }
@@ -116,6 +115,8 @@ function lookimg(event) {
      button.addEventListener('click',fghj);
         
     }
+    startVot++;
+
       }
       button.addEventListener('click',fghj);
 
