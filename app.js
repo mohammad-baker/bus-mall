@@ -182,8 +182,9 @@ function fghj() {
 
     }
     for (let i = 0; i < Bus.all.length; i++) {
-        console.log(Bus.all[i].votes);
-        votesArr.push(Bus.all[i].votes);
+        votesArr.push(Bus.all[i].vots);
+        console.log(Bus.all[i].vots);
+
         shownArr.push(Bus.all[i].shown);
 
 
