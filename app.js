@@ -15,10 +15,17 @@ let rightImageElement = document.getElementById('right-image');
 
 
 
+Bus.all = [];
+let localStorage=[];
 let votesArr = [];
 let shownArr = [];
 let namesArr = [];
 let priveIndex=[];
+
+
+
+
+
 function Bus(name, src) {
     this.name = name;
     this.src = src;
@@ -26,11 +33,13 @@ function Bus(name, src) {
     this.shown = 0;
     Bus.all.push(this);
     namesArr.push(this.name);
+
+    
 }
 
 let button = document.getElementById('myBtn')
+// console.log(Bus.all);
 
-Bus.all = [];
 new Bus('bag', 'img/bag.jpg');
 new Bus('banana', 'img/banana.jpg');
 new Bus('bathroom', 'img/bathroom.jpg');
@@ -53,38 +62,45 @@ new Bus('wine-glass', 'img/wine-glass.jpg');
 
 
 
+getBusmall();
+function jkp() {
+    let newVa=JSON.stringify(Bus.all);
+    window.localStorage.setItem('Busmall',newVa);
+    
+}
+
+function getBusmall() {
+    // console.log('befor',Bus.all);
+    let trueStoarge  =window.localStorage.getItem('Busmall');
+    //  console.log(trueStoarge);
+    let backBus=JSON.parse(trueStoarge);
 
 
+    if (backBus !==null){
+        // console.log("buck sting",backBus);
+        // for (let i = 0; i < backBus.length; i++) {
+        //     new Bus(backBus[i].name,backBus[i].src,backBus[i].vots,backBus[i].shown)
+            
+        // }
 
+        // console.log('after',Bus.all);
+        Bus.all=backBus;
+    }
+
+    
+}
 
 function ranomImage() {
     return Math.floor(Math.random() * Bus.all.length);
 
 }
 
-function raage() {
-    return Math.floor(Math.random() * 3);
 
-}
 function threeImage() {
     leftImageIndex = ranomImage();
     middleImageIndex = ranomImage();
     rightImageIndex = ranomImage();
 
-
-//      
-//     console.log(nammmmes);
-// for (let i = 0; i < 3; i++) {
-    
-//     while (nammmmes[random] ===.datasets(anammmmes[random]) ) {
-//         middleImageIndex = ranomImage();
-//         rightImageIndex = ranomImage();
-//         leftImageIndex = ranomImage();
-//     }
-    
-// }
-
-//  newnmaaaa[0]===nammmmes[0]||newnmaaaa[0]===nammmmes[1]||newnmaaaa[0]===nammmmes[2]||newnmaaaa[1]===nammmmes[0]||newnmaaaa[1]===nammmmes[1]||newnmaaaa[1]===nammmmes[2]||newnmaaaa[2]===nammmmes[0]||newnmaaaa[2]===nammmmes[1]||newnmaaaa[2]===nammmmes[2]
     while (leftImageIndex === rightImageIndex || middleImageIndex === leftImageIndex || middleImageIndex === rightImageIndex||priveIndex.includes(leftImageIndex)||priveIndex.includes(rightImageIndex)||priveIndex.includes(middleImageIndex)) {
         middleImageIndex = ranomImage();
         rightImageIndex = ranomImage();
@@ -94,7 +110,6 @@ function threeImage() {
 
     
 
-    // console.log(leftImageElement);
 
     leftImageElement.setAttribute('src', Bus.all[leftImageIndex].src)
     midlleImageElemant.setAttribute('src', Bus.all[middleImageIndex].src)
@@ -123,9 +138,7 @@ threeImage()
 
 
 
-// leftImageElement.addEventListener('click', lookimg);
-// rightImageElement.addEventListener('click', lookimg);
-// midlleImageElemant.addEventListener('click', lookimg);
+
 let imageSctuoin = document.getElementById('ocation');
 imageSctuoin.addEventListener('click', lookimg);
 function lookimg(event) {
@@ -183,14 +196,16 @@ function fghj() {
     }
     for (let i = 0; i < Bus.all.length; i++) {
         votesArr.push(Bus.all[i].vots);
-        console.log(Bus.all[i].vots);
 
         shownArr.push(Bus.all[i].shown);
 
 
     }
     showChart();
+    jkp()
     button.removeEventListener('click', fghj);
+    
+
 }
 
 
@@ -285,3 +300,4 @@ function showChart() {
     );
 
 }
+
