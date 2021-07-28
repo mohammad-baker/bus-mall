@@ -83,8 +83,9 @@ function getBusmall() {
             
         // }
 
-        // console.log('after',Bus.all);
         Bus.all=backBus;
+                console.log('after',Bus.all);
+
     }
 
     
@@ -169,8 +170,9 @@ function lookimg(event) {
         //     leftImageElement.removeEventListener('click',lookimg);
         //   rightImageElement.removeEventListener('click',lookimg);
         //   midlleImageElemant.removeEventListener('click',lookimg);
+        
         imageSctuoin.removeEventListener('click', lookimg);
-
+        jkp()
         button.hidden = false;
         button.addEventListener('click', fghj);
 
@@ -202,18 +204,11 @@ function fghj() {
 
     }
     showChart();
-    jkp()
+    
     button.removeEventListener('click', fghj);
     
 
 }
-
-
-
-
- 
-
-
 
 
 
